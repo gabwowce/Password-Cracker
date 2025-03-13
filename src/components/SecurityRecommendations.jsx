@@ -5,7 +5,7 @@ import React from "react";
 
 const SecurityRecommendations = () => {
   return (
-    <div className="security-recommendations">
+    <div className="flex flex-col bg-black/20 backdrop-blur-md rounded-3xl p-15 text-center gap-5">
       <h2>🛡️ Saugumo Rekomendacijos</h2>
       <p>
         Remiantis slaptažodžių analizės rezultatais, pateikiame keletą rekomendacijų dėl slaptažodžių kūrimo ir apsaugos.

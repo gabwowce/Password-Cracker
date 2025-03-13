@@ -1,3 +1,4 @@
+@import "tailwindcss";
 .app-container {
   display: flex;
 }
@@ -113,9 +114,7 @@ body {
   height: 100vh;
   z-index: 0;
 }
-.sidebar {
-  z-index: 2;
-}
+
 .content {
   position: sticky;
   top: 0;
@@ -127,11 +126,4 @@ body {
   z-index: 2;
   background: "rgb(0,0,0,0.5)";
   border-radius: 24px;
-}
-.password-analyzer {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 20px;
-  text-align: center;
 }

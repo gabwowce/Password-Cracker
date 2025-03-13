@@ -5,7 +5,7 @@ import React from "react";
 
 const ToolsComparison = () => {
   return (
-    <div className="tools-comparison">
+    <div className="flex flex-col bg-black/20 backdrop-blur-md rounded-3xl p-15 text-center gap-5">
       <h2>🔧 Slaptažodžių Nulaužimo Įrankių Palyginimas</h2>
       <p>
         Yra įvairių įrankių, kurie naudojami slaptažodžių nulaužimui. Jie skiriasi greičiu, metodais ir efektyvumu.

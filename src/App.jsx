@@ -23,7 +23,7 @@ export default function App() {
         <GlobalNetwork />
       </div>
       
-      <div className="sidebar">
+      <div className="z-0 flex flex-col gap-10 w-2/5 p-20">
         {/* <h1 style={{ position: "relative", zIndex: 1, color: "#fff" }}>
           Slaptažodžių Saugumo Analizė
         </h1> */}
@@ -37,10 +37,10 @@ export default function App() {
       {/* Efektas bus tik ant content */}
       <div className="content">
         <MouseLightEffect />
-        <div className="password-analyzer">
-          <h1>Slaptažodžių Stiprumo Analizatorius</h1>
+        <div className="flex flex-col bg-black/20 backdrop-blur-md rounded-3xl p-15 text-center gap-5">
+          <h1 className="">Slaptažodžių stiprumo analizatorius</h1>
           <PasswordInput password={password} setPassword={setPassword} />
-          <button onClick={() => setAnalysis(analyzePassword(password))} disabled={!password}>
+          <button className="text-2xl" onClick={() => setAnalysis(analyzePassword(password))} disabled={!password}>
             Tikrinti slaptažodį
           </button>
           {analysis && <PasswordAnalysis analysis={analysis} />}

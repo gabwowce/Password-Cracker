@@ -5,7 +5,7 @@ import React from "react";
 
 const PasswordLengthImpact = () => {
   return (
-    <div className="password-length-impact">
+    <div className="flex flex-col bg-black/20 backdrop-blur-md rounded-3xl p-15 text-center gap-5">
       <h2>🔢 Slaptažodžio Ilgio Įtaka Nulaužimo Laikui</h2>
       <p>
         Ilgesni slaptažodžiai eksponentiškai didina nulaužimo laiką. Kuo daugiau simbolių, tuo daugiau galimų kombinacijų.

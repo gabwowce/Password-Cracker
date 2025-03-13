@@ -5,7 +5,7 @@ import React from "react";
 
 const ComplexityImpact = () => {
   return (
-    <div className="complexity-impact">
+    <div className="flex flex-col bg-black/20 backdrop-blur-md rounded-3xl p-15 text-center gap-5">
       <h2>🔠 Slaptažodžio Sudėtingumo Įtaka</h2>
       <p>
         Skirtingi simbolių rinkiniai suteikia skirtingą apsaugos lygį. Kuo įvairesni simboliai, tuo sunkiau slaptažodį nulaužti.
