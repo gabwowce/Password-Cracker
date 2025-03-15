@@ -1,41 +1,77 @@
 import React from "react";
+import { FiHash, FiClock, FiLock, FiAlertCircle, FiCheckCircle } from "react-icons/fi"; // Lucide style icons
 
 const PasswordAnalysis = ({ analysis }) => {
-  // Funkcija nustatyti spalvą pagal stiprumą
+  // Funkcija nustatyti spalvą pagal stiprumo lygį
   const getStrengthColor = (strengthLevel) => {
-    if (strengthLevel === "Silpnas") return "text-red-300";
-    if (strengthLevel === "Vidutinis") return "text-yellow-300";
-    if (strengthLevel === "Stiprus") return "text-green-300";
-    return "text-white"; // Jei nėra reikšmės
+    if (strengthLevel === "Labai silpnas" || strengthLevel === "Silpnas") return "text-red-500";
+    return "text-green-500"; // Standartinė spalva
   };
 
   return (
-    <div className="backdrop-blur-3xl rounded-md p-6 mt-10 mx-auto ">
-      <h2 className="text-2xl font-bold text-center mb-4">🔍 Analizės Rezultatai</h2>
+    <div className="rounded-md mt-5 mx-auto text-white">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-left">
           <tbody>
+            {/* Slaptažodžio ilgis */}
             <tr className="border-b border-white/20">
-              <td className="p-3 font-semibold">🔢 Slaptažodžio ilgis:</td>
-              <td className="p-3 text-red-300">{analysis.length} simbolių</td>
+              <td className="p-3 font-semibold flex items-center gap-2">
+                <FiHash /> Slaptažodžio ilgis:
+              </td>
+              <td className="p-3">{analysis.ilgis} simbolių</td>
             </tr>
+
+            {/* Simbolių įvairovė */}
             <tr className="border-b border-white/20">
-              <td className="p-3 font-semibold">🔡 Simbolių įvairovė:</td>
-              <td className="p-3 text-cyan-300">{analysis.characterVariety}</td>
-            </tr>
-            <tr className="border-b border-white/20">
-              <td className="p-3 font-semibold">⏳ Num. nulaužimo laikas:</td>
-              <td className="p-3 text-yellow-300">{analysis.estimatedTime}</td>
-            </tr>
-            <tr className="border-b border-white/20">
-              <td className="p-3 font-semibold">🛡️ Stiprumo lygis:</td>
-              <td className={`p-3 font-bold ${getStrengthColor(analysis.strengthLevel)}`}>
-                {analysis.strengthLevel}
+              <td className="p-3 font-semibold flex items-center gap-2">
+                <FiCheckCircle /> Sudėtis:
+              </td>
+              <td className="p-3">
+                {analysis.turiSimbolius && "Simboliai, "}
+                {analysis.turiSkaicius && "Skaičiai, "}
+                {analysis.turiDidziasRaides && "Didžiosios raidės, "}
+                {analysis.turiMazasRaides && "Mažosios raidės"}
               </td>
             </tr>
+
+            {/* Nulaužimo laikas skirtingoms atakoms */}
+            <tr className="border-b border-white/20">
+              <td className="p-3 font-semibold flex items-center gap-2">
+                <FiClock /> Nulaužimo laikas (CPU):
+              </td>
+              <td className="p-3">{analysis.nulauzimoLaikasCPU}</td>
+            </tr>
+
+            <tr className="border-b border-white/20">
+              <td className="p-3 font-semibold flex items-center gap-2">
+                <FiClock /> Nulaužimo laikas (GPU):
+              </td>
+              <td className="p-3">{analysis.nulauzimoLaikasGPU}</td>
+            </tr>
+
+            <tr className="border-b border-white/20">
+              <td className="p-3 font-semibold flex items-center gap-2">
+                <FiClock /> Nulaužimo laikas (Superkompiuteris):
+              </td>
+              <td className="p-3">{analysis.nulauzimoLaikasSuper}</td>
+            </tr>
+
+            {/* Stiprumo lygis */}
+            <tr className="border-b border-white/20">
+              <td className="p-3 font-semibold flex items-center gap-2">
+                <FiLock /> Stiprumas:
+              </td>
+              <td className={`p-3 font-bold ${getStrengthColor(analysis.stiprumoLygis)}`}>
+                {analysis.stiprumoLygis}
+              </td>
+            </tr>
+
+            {/* Patarimai */}
             <tr>
-              <td className="p-3 font-semibold">💡 Rekomendacija:</td>
-              <td className="p-3 text-red-300">{analysis.suggestion}</td>
+              <td className="p-3 font-semibold flex items-center gap-2">
+                <FiAlertCircle /> Rekomendacija:
+              </td>
+              <td className="p-3">{analysis.rekomendacija}</td>
             </tr>
           </tbody>
         </table>

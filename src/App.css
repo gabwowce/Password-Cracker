@@ -1,7 +1,4 @@
 @import "tailwindcss";
-.app-container {
-  display: flex;
-}
 
 .sidebar {
   width: 30%;
@@ -104,8 +101,11 @@ body {
 .app-container {
   position: relative;
   display: flex;
+  justify: "center";
+  width: "100%";
   min-height: 100vh;
 }
+
 .background-network {
   position: fixed;
   top: 0;
