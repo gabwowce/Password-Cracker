@@ -1,88 +1,96 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const ToolsComparison = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const PasswordCrackingTools = () => {
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="w-full">
-      {/* Akordeono viršus */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full p-4 bg-black/30 backdrop-blur-md rounded-xl text-white text-lg font-semibold transition-all duration-300 hover:bg-black/40"
-      >
-        🔧 Slaptažodžių Nulaužimo Įrankių Palyginimas
-        <ChevronDown
-          size={22}
-          className={`transition-transform bg-wit ${isOpen ? "rotate-180" : ""}`}
-        />
-      </button>
 
-      {/* Akordeono turinys */}
-      {isOpen && (
-         <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-center ">
-          <p className="text-gray-300 text-sm text-center mb-6">
-            Yra įvairių įrankių, kurie naudojami slaptažodžių nulaužimui. Jie skiriasi greičiu, metodais ir efektyvumu.
+        <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-left text-sm space-y-4">
+          <h2 className="pb-10 text-2xl text-center">🔧 Slaptažodžių Nulaužimo Įrankių Paaiškinimas</h2>
+          <p>
+            Slaptažodžių nulaužimo įrankiai – tai specialios programos, kurios
+            bando atspėti ar atkurti užšifruotus slaptažodžius. Jie naudojami
+            tiek <strong>saugumo testavimui</strong> (etiketiškas hakinimas), tiek kenkėjiškais
+            tikslais. Toliau – populiariausi įrankiai ir kuo jie skiriasi.
           </p>
 
-          {/* Lentelė */}
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse border border-gray-600 text-sm text-left">
-              <thead>
-                <tr className="bg-gray-800 text-gray-300">
-                  <th className="p-3 border border-gray-600">Įrankis</th>
-                  <th className="p-3 border border-gray-600">Metodas</th>
-                  <th className="p-3 border border-gray-600">Greitis (bandymų/s)</th>
-                  <th className="p-3 border border-gray-600">Reikalavimai</th>
-                </tr>
-              </thead>
-              <tbody className="text-gray-400">
-                <tr className="hover:bg-gray-800">
-                  <td className="p-3 border border-gray-600"><strong>Hashcat</strong></td>
-                  <td className="p-3 border border-gray-600">GPU pagreitintas brute-force</td>
-                  <td className="p-3 border border-gray-600">10⁹</td>
-                  <td className="p-3 border border-gray-600">Galinga GPU</td>
-                </tr>
-                <tr className="hover:bg-gray-800">
-                  <td className="p-3 border border-gray-600"><strong>John the Ripper</strong></td>
-                  <td className="p-3 border border-gray-600">Hybridinis (žodynas + brute-force)</td>
-                  <td className="p-3 border border-gray-600">10⁶</td>
-                  <td className="p-3 border border-gray-600">Vidutinis CPU</td>
-                </tr>
-                <tr className="hover:bg-gray-800">
-                  <td className="p-3 border border-gray-600"><strong>Hydra</strong></td>
-                  <td className="p-3 border border-gray-600">Online slaptažodžių atakos</td>
-                  <td className="p-3 border border-gray-600">10³</td>
-                  <td className="p-3 border border-gray-600">Interneto prieiga</td>
-                </tr>
-                <tr className="hover:bg-gray-800">
-                  <td className="p-3 border border-gray-600"><strong>Aircrack-ng</strong></td>
-                  <td className="p-3 border border-gray-600">Wi-Fi slaptažodžių atakos</td>
-                  <td className="p-3 border border-gray-600">10⁴</td>
-                  <td className="p-3 border border-gray-600">Belaidis tinklas</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Kas lemia nulaužimo laiką */}
-          <h3 className="text-xl font-semibold mt-6 text-center">🔹 Kas lemia nulaužimo laiką?</h3>
-          <ul className="list-disc list-inside text-gray-300 text-sm mt-3">
-            <li><strong>Slaptažodžio ilgis</strong> – ilgesni slaptažodžiai yra žymiai sunkiau nulaužiami.</li>
-            <li><strong>Naudojami simboliai</strong> – daugiau simbolių aibėje padidina entropiją.</li>
-            <li><strong>Aparatinė įranga</strong> – stipri GPU gali drastiškai pagreitinti brute-force atakas.</li>
-            <li><strong>Naudojama metodika</strong> – žodyno atakos dažnai yra greitesnės nei brute-force.</li>
+          <h3 className="text-lg font-semibold">🔹 Hashcat</h3>
+          <ul className="list-disc list-inside text-gray-300 space-y-1">
+            <li>Vienas greičiausių įrankių pasaulyje.</li>
+            <li>Naudoja tavo <strong>GPU</strong> (vaizdo plokštę), kad atliktų milijardus bandymų per sekundę.</li>
+            <li>Labai efektyvus su įvairiais hash algoritmais (MD5, SHA1, bcrypt ir kt.).</li>
+            <li>Tinka, kai turi <strong>galingą kompiuterį</strong> ir daug duomenų.</li>
           </ul>
 
-          {/* Išvados */}
-          <h3 className="text-xl font-semibold mt-6 text-center">🔹 Išvados</h3>
-          <p className="text-gray-300 text-sm mt-3 text-center">
-            Jei slaptažodis yra trumpas ir nesudėtingas, jis gali būti nulaužtas per kelias sekundes naudojant modernius įrankius. Stiprūs slaptažodžiai reikalauja ilgo laužimo laiko, todėl rekomenduojama naudoti dviejų veiksnių autentifikaciją.
+          <h3 className="text-lg font-semibold">🔹 John the Ripper</h3>
+          <ul className="list-disc list-inside text-gray-300 space-y-1">
+            <li>Veikia su <strong>CPU arba GPU</strong>, bet dažniausiai naudoja CPU.</li>
+            <li>Turi daug papildinių (plugins), palaiko įvairius metodus (žodynas + brute-force).</li>
+            <li>Patogus tiems, kurie nori daugiau konfigūracijos ir testavimo galimybių.</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold">🔹 Hydra</h3>
+          <ul className="list-disc list-inside text-gray-300 space-y-1">
+            <li>Veikia per tinklą – bando <strong>prisijungti prie paskyrų</strong> naudodama žinomus vartotojus/slaptažodžius.</li>
+            <li>Naudojamas <strong>„brute-force“ atakoms per internetą</strong> (pvz., SSH, FTP, HTTP).</li>
+            <li>Naudingas testuojant realias sistemas.</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold">🔹 Aircrack-ng</h3>
+          <ul className="list-disc list-inside text-gray-300 space-y-1">
+            <li>Skirtas <strong>Wi-Fi slaptažodžių nulaužimui</strong>.</li>
+            <li>Veikia su belaidžiais tinklais, analizuoja paketų srautą ir bando atkurti raktą.</li>
+            <li>Dažnai naudojamas testuojant tinklo saugumą.</li>
+          </ul>
+
+          <h3 className="text-lg font-semibold">🔹 Santrauka</h3>
+          <table className="w-full border-collapse border border-gray-600 text-sm">
+            <thead>
+              <tr className="bg-gray-800 text-gray-300">
+                <th className="p-2 border border-gray-600">Įrankis</th>
+                <th className="p-2 border border-gray-600">Tikslas</th>
+                <th className="p-2 border border-gray-600">Geriausia naudoti kai...</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-400">
+              <tr className="hover:bg-gray-800">
+                <td className="p-2 border border-gray-600">Hashcat</td>
+                <td className="p-2 border border-gray-600">Greitas hash’ai</td>
+                <td className="p-2 border border-gray-600">Turi galingą GPU</td>
+              </tr>
+              <tr className="hover:bg-gray-800">
+                <td className="p-2 border border-gray-600">John the Ripper</td>
+                <td className="p-2 border border-gray-600">Lankstus metodų pasirinkimas</td>
+                <td className="p-2 border border-gray-600">Nori testuoti skirtingus scenarijus</td>
+              </tr>
+              <tr className="hover:bg-gray-800">
+                <td className="p-2 border border-gray-600">Hydra</td>
+                <td className="p-2 border border-gray-600">Tinkliniai prisijungimai</td>
+                <td className="p-2 border border-gray-600">Atakuoji sistemas per internetą</td>
+              </tr>
+              <tr className="hover:bg-gray-800">
+                <td className="p-2 border border-gray-600">Aircrack-ng</td>
+                <td className="p-2 border border-gray-600">Wi-Fi saugumo testavimas</td>
+                <td className="p-2 border border-gray-600">Turi belaidį tinklą</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p className="text-xs text-gray-400 mt-4">
+            Šaltinis: <a
+              href="https://dev.to/bhavikgoplani/hashcat-vs-john-the-ripper-a-comparative-benchmarking-of-password-cracking-tools-26a4"
+              target="_blank"
+              className="underline"
+            >
+              dev.to – Hashcat vs John the Ripper: A Comparative Benchmarking
+            </a>
           </p>
         </div>
-      )}
+
     </div>
   );
 };
 
-export default ToolsComparison;
+export default PasswordCrackingTools;

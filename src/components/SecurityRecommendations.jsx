@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const SecurityRecommendations = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="w-full ">
