@@ -36,7 +36,15 @@ export default function App() {
         return <ComplexityImpact />;
       case "security":
         return <SecurityRecommendations />;
+      case "breaches":
+        return <DataBreachInfo />;
+      case "tips":
+        return <PasswordCreationTips />;
+      case "manager":
+        return <PasswordManagers />;
+
       case "analyzer":
+        
         return (
           <div className="w-full max-w-2xl mx-auto">
             
@@ -72,6 +80,12 @@ export default function App() {
         <button onClick={() => setActiveSection("length")} className="text-left hover:text-teal-300">🔹 Ilgio įtaka</button>
         <button onClick={() => setActiveSection("complexity")} className="text-left hover:text-teal-300">🔹 Kompleksiškumas</button>
         <button onClick={() => setActiveSection("security")} className="text-left hover:text-teal-300">🔹 Apsaugos patarimai</button>
+
+        <button onClick={() => setActiveSection("breaches")} className="text-left hover:text-teal-300">🔹 Duomenų nutekėjimai</button>
+        <button onClick={() => setActiveSection("tips")} className="text-left hover:text-teal-300">🔹 Slaptažodžio kūrimo patarimai</button>
+        <button onClick={() => setActiveSection("manager")} className="text-left hover:text-teal-300">🔹 Slaptažodžių tvarkyklės</button>
+
+        
         <button onClick={() => setActiveSection("analyzer")} className="text-left hover:text-teal-300">🔹 Slaptažodžio analizatorius</button>
       </div>
   
