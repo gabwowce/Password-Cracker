@@ -11,9 +11,9 @@ export default function GlobalNetwork() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const NUM_PARTICLES = 180;       // Daugiau dalelių
+    const NUM_PARTICLES = 120;       // Daugiau dalelių
     const MAX_DISTANCE = 140;        // Ilgesnis atstumas tarp dalelių
-    const PARTICLE_SPEED = 0.5;      // Judėjimo greitis
+    const PARTICLE_SPEED = 0.1;      // Judėjimo greitis
     const MOUSE_RADIUS = 300;        // Pelės įtakos spindulys (didesnis = stipresnė sąveika)
 
     // Sekame pelės padėtį

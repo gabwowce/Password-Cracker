@@ -10,6 +10,10 @@ import "./App.css";
 import MouseLightEffect from "./components/MouseLightEffect";
 import GlobalNetwork from "./components/GlobalNetwork";
 import CrackingTechniques from "./components/CrackingTechniques";
+import { DataBreachInfo } from "./components/DataBreachInfo";
+import { PasswordCreationTips } from './components/PasswordCreationTips';
+import { PasswordManagers } from './components/PasswordManagers';
+import slaptLogo from "./assets/slapt-logo2.png";
 
 export default function App() {
   const [password, setPassword] = useState("");
@@ -34,8 +38,8 @@ export default function App() {
         return <PasswordLengthImpact />;
       case "complexity":
         return <ComplexityImpact />;
-      case "security":
-        return <SecurityRecommendations />;
+      // case "security":
+      //   return <SecurityRecommendations />;
       case "breaches":
         return <DataBreachInfo />;
       case "tips":
@@ -64,6 +68,13 @@ export default function App() {
     }
   };
 
+  const sidebarButton = "text-white text-left px-4 py-2 rounded-lg transition";
+
+
+  const getButtonClass = (section) =>
+    `${sidebarButton} ${activeSection === section ? "bg-[#182842] font-semibold" : "bg-black/40 hover:bg-[#182842]"}`;
+  
+  
   return (
     <div className="flex min-h-screen relative bg-transparent">
       {/* Background effect */}
@@ -73,20 +84,21 @@ export default function App() {
       </div>
   
       {/* Sidebar */}
-      <div className="w-full md:w-72 p-6 bg-black/30 backdrop-blur-md border-r border-gray-700 flex flex-col gap-4 min-h-screen">
-        <h2 className="text-lg font-semibold mb-2">📘 Informacija</h2>
-        <button onClick={() => setActiveSection("cracking")} className="text-left hover:text-teal-300">🔹 Laužymo metodai</button>
-        <button onClick={() => setActiveSection("tools")} className="text-left hover:text-teal-300">🔹 Įrankių palyginimas</button>
-        <button onClick={() => setActiveSection("length")} className="text-left hover:text-teal-300">🔹 Ilgio įtaka</button>
-        <button onClick={() => setActiveSection("complexity")} className="text-left hover:text-teal-300">🔹 Kompleksiškumas</button>
-        <button onClick={() => setActiveSection("security")} className="text-left hover:text-teal-300">🔹 Apsaugos patarimai</button>
+      <div className="w-full md:w-72 p-6 bg-black/30 backdrop-blur-md border-r flex flex-col gap-4 min-h-screen">
+        <img src={slaptLogo} alt="Logo" className="w-60 h-auto mx-auto mb-4" />
 
-        <button onClick={() => setActiveSection("breaches")} className="text-left hover:text-teal-300">🔹 Duomenų nutekėjimai</button>
-        <button onClick={() => setActiveSection("tips")} className="text-left hover:text-teal-300">🔹 Slaptažodžio kūrimo patarimai</button>
-        <button onClick={() => setActiveSection("manager")} className="text-left hover:text-teal-300">🔹 Slaptažodžių tvarkyklės</button>
+        <button onClick={() => setActiveSection("cracking")} className={getButtonClass("cracking")}>Laužymo metodai</button>
+        <button onClick={() => setActiveSection("tools")} className={getButtonClass("tools")}>Įrankių palyginimas</button>
+        <button onClick={() => setActiveSection("length")} className={getButtonClass("length")}> Ilgio įtaka</button>
+        <button onClick={() => setActiveSection("complexity")} className={getButtonClass("complexity")}> Kompleksiškumas</button>
+        {/* <button onClick={() => setActiveSection("security")} className="text-left hover:text-teal-300">🔹 Apsaugos patarimai</button> */}
+
+        <button onClick={() => setActiveSection("breaches")} className={getButtonClass("breaches")}> Duomenų nutekėjimai</button>
+        <button onClick={() => setActiveSection("tips")} className={getButtonClass("tips")}> Slaptažodžio kūrimo patarimai</button>
+        <button onClick={() => setActiveSection("manager")} className={getButtonClass("manager")}> Slaptažodžių tvarkyklės</button>
 
         
-        <button onClick={() => setActiveSection("analyzer")} className="text-left hover:text-teal-300">🔹 Slaptažodžio analizatorius</button>
+        <button onClick={() => setActiveSection("analyzer")} className={getButtonClass("analyzer")}> Slaptažodžio analizatorius</button>
       </div>
   
       {/* Main content */}
