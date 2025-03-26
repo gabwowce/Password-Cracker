@@ -1,45 +1,78 @@
-import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import React from "react";
 
 const SecurityRecommendations = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
   return (
-    <div className="w-full ">
-      {/* Akordeono antraštė */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full p-4 bg-black/30 backdrop-blur-md rounded-xl text-white text-lg font-semibold transition-all duration-300 hover:bg-black/40"
-      >
-        🛡️ Saugumo Rekomendacijos
-        <ChevronDown
-          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
-          size={22}
-        />
-      </button>
+    <div className="w-full">
+      <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-left text-sm space-y-4">
+        <h2 className="pb-10 text-2xl text-center">🔐 Slaptažodžių Saugumo Rekomendacijos</h2>
 
-      {/* Akordeono turinys */}
-      {isOpen && (
-        <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-center ">
-          <p className="text-gray-300">
-            Remiantis slaptažodžių analizės rezultatais, pateikiame keletą rekomendacijų dėl slaptažodžių kūrimo ir apsaugos.
-          </p>
+        <h3 className="text-lg font-semibold">🔹 Slaptažodžio Ilgis</h3>
+        <p>
+          NIST rekomenduoja, kad slaptažodžiai būtų bent 8 simbolių ilgio, o aukšto saugumo sistemoms – ne trumpesni nei 15 simbolių. Ilgesni slaptažodžiai yra sunkiau nulaužiami ir suteikia didesnį saugumo lygį. :contentReference[oaicite:3]{index=3}
+        </p>
 
-          <ul className="list-disc list-inside text-gray-300 text-sm mt-3 text-left">
-            <li><strong>Naudokite bent 12–16 simbolių</strong> ilgio slaptažodžius.</li>
-            <li>Maišykite <strong>didžiąsias, mažąsias raides, skaičius ir specialius simbolius</strong>.</li>
-            <li>Venkite <strong>lengvai atspėjamų frazių</strong> (pvz., „password123“).</li>
-            <li>Naudokite <strong>slaptažodžių tvarkykles</strong> (LastPass, Bitwarden, 1Password).</li>
-            <li>Įjunkite <strong>dviejų veiksnių autentifikaciją (2FA)</strong> visur, kur įmanoma.</li>
-            <li>Nenaudokite to paties slaptažodžio <strong>keliuose puslapiuose</strong>.</li>
+        <h3 className="text-lg font-semibold">🔹 Simbolių Įvairovė</h3>
+        <p>
+          Nors anksčiau buvo akcentuojamas specialiųjų simbolių naudojimas, dabar svarbiau yra slaptažodžio ilgis. Tačiau vis dar rekomenduojama naudoti įvairius simbolius, kad padidinti slaptažodžio stiprumą. :contentReference[oaicite:4]{index=4}
+        </p>
+
+        <h3 className="text-lg font-semibold">🔹 Periodiškas Slaptažodžių Keitimas</h3>
+        <p>
+          NIST rekomenduoja atsisakyti privalomo slaptažodžių keitimo nustatytais intervalais, nebent yra įrodymų apie saugumo pažeidimą. Dažnas slaptažodžių keitimas gali paskatinti vartotojus rinktis silpnesnius slaptažodžius arba juos užsirašyti, kas mažina bendrą saugumą. :contentReference[oaicite:5]{index=5}
+        </p>
+
+        <h3 className="text-lg font-semibold">🔹 Dviejų Veiksnių Autentifikacija (2FA)</h3>
+        <p>
+          Microsoft rekomenduoja įdiegti dviejų veiksnių autentifikaciją, kad padidinti paskyrų saugumą. Tai suteikia papildomą apsaugos sluoksnį, net jei slaptažodis būtų kompromituotas. :contentReference[oaicite:6]{index=6}
+        </p>
+
+        <h3 className="text-lg font-semibold">🔹 Slaptažodžių Tvarkyklės</h3>
+        <p>
+          Rekomenduojama naudoti slaptažodžių tvarkykles, kurios padeda generuoti ir saugoti stiprius, unikalius slaptažodžius kiekvienai paskyrai. Tai palengvina slaptažodžių valdymą ir padidina bendrą saugumą. :contentReference[oaicite:7]{index=7}
+        </p>
+
+        <p className="text-xs text-gray-400 mt-4">
+          Šaltiniai:
+          <ul className="list-disc list-inside">
+            <li>
+              <a
+                href="https://www.strongdm.com/blog/nist-password-guidelines"
+                target="_blank"
+                className="underline"
+              >
+                NIST Password Guidelines: 2025 Updates & Best Practices
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://learn.microsoft.com/en-us/microsoft-365/admin/misc/password-policy-recommendations?view=o365-worldwide"
+                target="_blank"
+                className="underline"
+              >
+                Microsoft Password Policy Recommendations
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://scytale.ai/resources/2024-nist-password-guidelines-enhancing-security-practices/"
+                target="_blank"
+                className="underline"
+              >
+                2025 NIST Password Guidelines: Enhancing Security Practices
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.crowe.com/cybersecurity-watch/password-security-best-practices-2025"
+                target="_blank"
+                className="underline"
+              >
+                Password Security Best Practices for 2025
+              </a>
+            </li>
           </ul>
-
-          <h3 className="mt-4 font-semibold text-lg">🔹 Papildomi apsaugos būdai</h3>
-          <p className="text-gray-300">
-            Be stiprių slaptažodžių, taip pat naudokite saugumo raktus (YubiKey), biometrinius duomenis (pirštų atspaudus) ir dažnai atnaujinkite savo slaptažodžius.
-          </p>
-        </div>
-      )}
+        </p>
+      </div>
     </div>
   );
 };
