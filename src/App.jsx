@@ -11,7 +11,7 @@ import MouseLightEffect from "./components/MouseLightEffect";
 import GlobalNetwork from "./components/GlobalNetwork";
 import CrackingTechniques from "./components/CrackingTechniques";
 //import { DataBreachInfo } from "./components/DataBreachInfo";
-import { PasswordCreationTips } from './components/PasswordCreationTips';
+//import { PasswordCreationTips } from './components/PasswordCreationTips';
 import { PasswordManagers } from './components/PasswordManagers';
 import slaptLogo from "./assets/slapt-logo2.png";
 
@@ -42,8 +42,8 @@ export default function App() {
       //   return <SecurityRecommendations />;
      // case "breaches":
       //  return <DataBreachInfo />;
-      case "tips":
-        return <PasswordCreationTips />;
+     // case "tips":
+        //return <PasswordCreationTips />;
       case "manager":
         return <PasswordManagers />;
 
