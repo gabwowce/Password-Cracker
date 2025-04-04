@@ -36,6 +36,11 @@ const ComplexityImpact = () => {
             target="_blank"
             className="underline"
           >
+            <a
+            href="https://www.cisa.gov/secure-our-world/require-strong-passwords"
+            target="_blank"
+            className="underline"
+          >
             Microsoft – Password Policy Recommendations
           </a>
         </p>
