@@ -10,8 +10,8 @@ import "./App.css";
 import MouseLightEffect from "./components/MouseLightEffect";
 import GlobalNetwork from "./components/GlobalNetwork";
 import CrackingTechniques from "./components/CrackingTechniques";
-import { DataBreachInfo } from "./components/DataBreachInfo";
-import { PasswordCreationTips } from './components/PasswordCreationTips';
+//import { DataBreachInfo } from "./components/DataBreachInfo";
+//import { PasswordCreationTips } from './components/PasswordCreationTips';
 import { PasswordManagers } from './components/PasswordManagers';
 import slaptLogo from "./assets/slapt-logo2.png";
 import banner from "./assets/banner.png";
@@ -41,10 +41,10 @@ export default function App() {
         return <ComplexityImpact />;
       // case "security":
       //   return <SecurityRecommendations />;
-      case "breaches":
-        return <DataBreachInfo />;
-      case "tips":
-        return <PasswordCreationTips />;
+     // case "breaches":
+      //  return <DataBreachInfo />;
+     // case "tips":
+        //return <PasswordCreationTips />;
       case "manager":
         return <PasswordManagers />;
 
