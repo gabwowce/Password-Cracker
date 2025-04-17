@@ -1,5 +1,6 @@
 {
   "name": "password-cracker",
+  "homepage": "https://gabwowce.github.io/Password-Cracker",
   "private": true,
   "version": "0.0.0",
   "type": "module",
