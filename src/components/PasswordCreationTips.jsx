@@ -3,7 +3,7 @@ import React from "react";
 export const PasswordCreationTips = () => {
   return (
     <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-left text-sm space-y-4">
-      <h2 className="pb-10 text-2xl text-center">💡 Slaptažodžių Kūrimo Patarimai</h2>
+      <h2 className="pb-10 text-2xl text-center">💡 Slaptažodžių kūrimo patarimai</h2>
       <ul className="list-disc list-inside text-gray-300 space-y-1">
         <li>Naudokite frazes arba sakinius (pvz. „ManPatinkaKava123!“)</li>
         <li>Venkite įprastų žodžių, gimtadienių ar vardų</li>

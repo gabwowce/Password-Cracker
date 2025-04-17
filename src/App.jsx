@@ -14,6 +14,7 @@ import { DataBreachInfo } from "./components/DataBreachInfo";
 import { PasswordCreationTips } from './components/PasswordCreationTips';
 import { PasswordManagers } from './components/PasswordManagers';
 import slaptLogo from "./assets/slapt-logo2.png";
+import banner from "./assets/banner.png";
 
 export default function App() {
   const [password, setPassword] = useState("");
@@ -47,22 +48,21 @@ export default function App() {
       case "manager":
         return <PasswordManagers />;
 
-      case "analyzer":
-        
-        return (
-          <div className="w-full max-w-2xl mx-auto">
-            
-            <div className="flex flex-col bg-black/20 backdrop-blur-md rounded-3xl p-8 text-center gap-5">
-              <h1 className="text-xl font-bold">Slaptažodžių stiprumo analizatorius</h1>
-              <PasswordInput 
-                password={password} 
-                setPassword={setPassword} 
-                strengthLevel={analysis?.stiprumoLygis} 
-              />
-              {analysis && <PasswordAnalysis analysis={analysis} />}
+        case "analyzer":
+          return (
+            <div className="w-full max-w-2xl mx-auto">
+              <div className="flex flex-col bg-black/20 backdrop-blur-md rounded-3xl p-8 text-center gap-5">
+                <h1 className="text-xl text-white">💪🔑Slaptažodžių stiprumo analizatorius</h1>
+                <PasswordInput 
+                  password={password} 
+                  setPassword={setPassword} 
+                  strengthLevel={analysis?.stiprumoLygis} 
+                />
+                {password && <PasswordAnalysis password={password} />}
+              </div>
             </div>
-          </div>
-        );
+          );
+        
       default:
         return null;
     }
@@ -99,12 +99,17 @@ export default function App() {
 
         
         <button onClick={() => setActiveSection("analyzer")} className={getButtonClass("analyzer")}> Slaptažodžio analizatorius</button>
+
+       
       </div>
-  
+      
       {/* Main content */}
       <main className="flex-1 flex justify-center items-start p-10">
+   
         <div className="w-full max-w-4xl">{renderSection()}</div>
       </main>
+
+      
     </div>
   );
   

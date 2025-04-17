@@ -8,7 +8,7 @@ const PasswordCrackingTools = () => {
     <div className="w-full">
 
         <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-left text-sm space-y-4">
-          <h2 className="pb-10 text-2xl text-center">🔧 Slaptažodžių Nulaužimo Įrankių Paaiškinimas</h2>
+          <h2 className="pb-10 text-2xl text-center">🔧 Slaptažodžių "laužimo" įrankių paaiškinimas</h2>
           <p>
             Slaptažodžių nulaužimo įrankiai – tai specialios programos, kurios
             bando atspėti ar atkurti užšifruotus slaptažodžius. Jie naudojami

@@ -4,7 +4,7 @@ const ComplexityImpact = () => {
   return (
     <div className="w-full">
       <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-left text-sm space-y-4">
-        <h2 className="pb-10 text-2xl text-center">🔐 Slaptažodžių Sudėtingumo Įtaka</h2>
+        <h2 className="pb-10 text-2xl text-center">🔐 Slaptažodžių sudėtingumo įtaka</h2>
         <p>
           Kuo įvairesni simboliai slaptažodyje – raidės (didžiosios ir mažosios), skaičiai,
           specialieji ženklai – tuo daugiau galimų kombinacijų turi atspėti įsilaužėlis.

@@ -3,7 +3,7 @@ import React from "react";
 export const PasswordManagers = () => {
   return (
     <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-left text-sm space-y-4">
-      <h2 className="pb-10 text-2xl text-center">🔐 Slaptažodžių Tvarkyklės</h2>
+      <h2 className="pb-10 text-2xl text-center">🔐 Slaptažodžių tvarkyklės</h2>
       <p>
         Slaptažodžių valdymo įrankiai padeda saugiai saugoti ir kurti unikalius
         slaptažodžius kiekvienai paskyrai. Jie leidžia naudotojui prisiminti tik

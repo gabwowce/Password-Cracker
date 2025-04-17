@@ -7,7 +7,7 @@ const PasswordLengthImpact = () => {
   return (
     <div className="w-full">
       <div className="bg-black/20 backdrop-blur-md rounded-xl p-5 mt-2 text-white text-left text-sm space-y-4">
-        <h2 className="pb-10 text-2xl text-center">⏱️ Slaptažodžio Ilgio Įtaka Nulaužimo Laikui</h2>
+        <h2 className="pb-10 text-2xl text-center">⏱️ Slaptažodžio ilgio įtaka "nulaužimo" laikui</h2>
 
         <p>
           Slaptažodžio ilgis yra vienas svarbiausių faktorių, lemiančių, kiek
