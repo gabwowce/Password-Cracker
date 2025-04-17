@@ -14,7 +14,7 @@ import CrackingTechniques from "./components/CrackingTechniques";
 //import { PasswordCreationTips } from './components/PasswordCreationTips';
 import { PasswordManagers } from './components/PasswordManagers';
 import slaptLogo from "./assets/slapt-logo2.png";
-import banner from "./assets/banner.png";
+
 
 export default function App() {
   const [password, setPassword] = useState("");
@@ -93,9 +93,9 @@ export default function App() {
         <button onClick={() => setActiveSection("complexity")} className={getButtonClass("complexity")}> Kompleksiškumas</button>
         {/* <button onClick={() => setActiveSection("security")} className="text-left hover:text-teal-300">🔹 Apsaugos patarimai</button> */}
 
-        <button onClick={() => setActiveSection("breaches")} className={getButtonClass("breaches")}> Duomenų nutekėjimai</button>
+        {/* <button onClick={() => setActiveSection("breaches")} className={getButtonClass("breaches")}> Duomenų nutekėjimai</button>
         <button onClick={() => setActiveSection("tips")} className={getButtonClass("tips")}> Slaptažodžio kūrimo patarimai</button>
-        <button onClick={() => setActiveSection("manager")} className={getButtonClass("manager")}> Slaptažodžių tvarkyklės</button>
+        <button onClick={() => setActiveSection("manager")} className={getButtonClass("manager")}> Slaptažodžių tvarkyklės</button> */}
 
         
         <button onClick={() => setActiveSection("analyzer")} className={getButtonClass("analyzer")}> Slaptažodžio analizatorius</button>
